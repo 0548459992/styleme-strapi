@@ -1,0 +1,33 @@
+services:
+  strapi:
+    type: web
+    name: strapi
+    repo: https://github.com/yourusername/your-strapi-repo
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    env:
+      NODE_ENV: production
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_HOST: ${POSTGRES_HOST}
+      DATABASE_PORT: ${POSTGRES_PORT}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      STRAPI_API_URL: https://api.styleme.fashion
+    autoDeploy: true
+
+databases:
+  postgres:
+    name: strapi-db
+    plan: free
+    provider: railway # or supabase
+    env:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_HOST: postgres.internal
+      POSTGRES_PORT: 5432
