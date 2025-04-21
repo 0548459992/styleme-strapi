@@ -4,9 +4,9 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-  "build": "NODE_ENV=production node node_modules/@strapi/strapi/bin/strapi.js build",
-  "start": "NODE_ENV=production node node_modules/@strapi/strapi/bin/strapi.js start",
-  "strapi": "node node_modules/@strapi/strapi/bin/strapi.js",
+  "build": "yarn install && NODE_ENV=production yarn strapi build",
+  "start": "NODE_ENV=production yarn strapi start",
+  "strapi": "strapi",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
