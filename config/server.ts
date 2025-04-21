@@ -1,6 +1,8 @@
 export default ({ env }) => ({
-  url: env('RENDER_EXTERNAL_URL'), // זה מה שחשוב
-  host: '0.0.0.0',
+  url: env('RENDER_EXTERNAL_URL'),
+  host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  keys: env.array('APP_KEYS'), // 👈 מוסיפים את זה
+  app: {
+    keys: env.array('APP_KEYS'),
+  },
 });
