@@ -2,8 +2,8 @@ services:
   strapi:
     type: web
     name: strapi
-    repo: https://github.com/yourusername/your-strapi-repo
-    buildCommand: yarn install && yarn build
+    repo: https://github.com/yourusername/styleme-strapi
+    buildCommand: yarn build
     startCommand: yarn start
     env:
       NODE_ENV: production
