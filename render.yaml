@@ -1,33 +1,36 @@
 services:
-  strapi:
-    type: web
-    name: strapi
+  - type: web
+    name: styleme-strapi
+    env: node
     repo: https://github.com/yourusername/styleme-strapi
     buildCommand: yarn build
     startCommand: yarn start
-    env:
-      NODE_ENV: production
-      APP_KEYS: ${APP_KEYS}
-      API_TOKEN_SALT: ${API_TOKEN_SALT}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      JWT_SECRET: ${JWT_SECRET}
-      DATABASE_CLIENT: postgres
-      DATABASE_NAME: ${POSTGRES_DB}
-      DATABASE_HOST: ${POSTGRES_HOST}
-      DATABASE_PORT: ${POSTGRES_PORT}
-      DATABASE_USERNAME: ${POSTGRES_USER}
-      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
-      STRAPI_API_URL: https://api.styleme.fashion
-    autoDeploy: true
-
-databases:
-  postgres:
-    name: strapi-db
     plan: free
-    provider: railway # or supabase
-    env:
-      POSTGRES_DB: strapi
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: securepassword
-      POSTGRES_HOST: postgres.internal
-      POSTGRES_PORT: 5432
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 1337
+      - key: RENDER_EXTERNAL_URL
+        value: https://styleme-strapi.onrender.com
+
+      # Database (Neon)
+      - key: DATABASE_CLIENT
+        value: postgres
+      - key: DATABASE_URL
+        sync: false
+
+      # Secrets (you must add them manually in Render dashboard)
+      - key: APP_KEYS
+        sync: false
+      - key: API_TOKEN_SALT
+        sync: false
+      - key: ADMIN_JWT_SECRET
+        sync: false
+      - key: TRANSFER_TOKEN_SALT
+        sync: false
+      - key: JWT_SECRET
+        sync: false
