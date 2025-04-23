@@ -1,15 +1,15 @@
-export default [
+module.exports = [
   'strapi::errors',
   {
     name: 'strapi::cors',
     config: {
       origin: [
-        'http://localhost:3000', // פיתוח
-        'https://styleme.fashion', // האתר הראשי בפרודקשן
-        'https://blog.styleme.fashion', // תת הדומיין לפרונט של הבלוג
+        'https://styleme-blog-pichuovy7-chaim-yabrovs-projects.vercel.app',
+        'https://blog.styleme.fashion',
+        'http://localhost:3000' // לשימוש בפיתוח
       ],
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      headers: ['Content-Type', 'Authorization'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
+      headers: '*',
       credentials: true,
     },
   },
