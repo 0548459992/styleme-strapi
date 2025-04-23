@@ -1,21 +1,18 @@
-// path: ./config/middlewares.js
-
 module.exports = [
   'strapi::errors',
+  'strapi::security',
+  'strapi::poweredBy',
   {
     name: 'strapi::cors',
     config: {
       origin: [
-        'https://styleme-blog.vercel.app',
-        'https://styleme-blog-*vercel.app'
+        'https://blog.styleme.fashion'
       ],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       credentials: true,
     },
   },
-  'strapi::security',
-  'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
