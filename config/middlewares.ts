@@ -10,7 +10,7 @@ module.exports = [
         'http://localhost:3000'
       ],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
       credentials: true,
       keepHeaderOnError: true
     },
