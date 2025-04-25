@@ -14,18 +14,14 @@
       "type": "string",
       "required": true
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
-    },
     "description": {
-      "type": "richtext"
+      "type": "text"
     },
     "posts": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::post.post",
-      "mappedBy": "category"
+      "inversedBy": "categories"
     }
   }
 }

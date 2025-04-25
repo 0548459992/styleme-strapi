@@ -14,14 +14,10 @@
       "type": "string",
       "required": true
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "fullName"
-    },
     "bio": {
-      "type": "richtext"
+      "type": "text"
     },
-    "profilePicture": {
+    "profileImage": {
       "allowedTypes": [
         "images",
         "files",
@@ -30,12 +26,6 @@
       ],
       "type": "media",
       "multiple": false
-    },
-    "socialLinks": {
-      "displayName": "socialLinks",
-      "type": "component",
-      "repeatable": false,
-      "component": "social-links.social-links"
     },
     "posts": {
       "type": "relation",
