@@ -19,7 +19,7 @@
       "type": "richtext",
       "required": true
     },
-    "coverImage": {
+    "image": {
       "type": "media",
       "multiple": true,
       "required": false,
