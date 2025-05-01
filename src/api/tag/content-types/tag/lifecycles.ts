@@ -1,6 +1,8 @@
 // src/api/tag/content-types/tag/lifecycles.ts
 
-import slugify from 'slugify';
+import slugifyImport from 'slugify';
+
+const slugify = slugifyImport as (str: string, options?: { lower?: boolean; strict?: boolean }) => string;
 
 export default {
   async beforeCreate(event) {
