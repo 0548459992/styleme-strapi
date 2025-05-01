@@ -10,10 +10,15 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "fullName": {
-      "type": "string",
-      "required": true
-    },
+  "fullName": {
+    "type": "string",
+    "required": true
+  },
+  "slug": {
+    "type": "uid",
+    "targetField": "fullName",
+    "required": true
+  },
     "bio": {
       "type": "text"
     },
