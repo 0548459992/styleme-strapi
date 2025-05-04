@@ -29,7 +29,12 @@ export default [
   },
   'strapi::poweredBy',
   'strapi::query',
-  'strapi::body',
+  {
+    name: 'strapi::body',
+    config: {
+      encoding: 'utf-8',
+    },
+  },
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
