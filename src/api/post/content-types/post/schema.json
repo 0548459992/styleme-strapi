@@ -90,6 +90,9 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "language": {
+      "type": "string"
     }
   }
 }
